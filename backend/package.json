@@ -1,0 +1,24 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "Backend for ORA Plant Encyclopedia",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "ORA",
+    "license": "MIT",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^16.0.1",
+        "eslint": "^8.17.0",
+        "eslint-config-prettier": "^8.5.0",
+        "express": "^4.18.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.3.6",
+        "nodemon": "^2.0.16"
+    }
+}
