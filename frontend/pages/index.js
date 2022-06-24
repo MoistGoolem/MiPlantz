@@ -8,7 +8,7 @@ export default function Home() {
     const { theme } = useTheme()
 
         const handleConfetti = () => {
-        confetti();
+            confetti();
         };
 
     return (

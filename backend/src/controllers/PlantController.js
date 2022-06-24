@@ -32,26 +32,32 @@ export const createPlant = (req, res) => {
         })
 }
 
-export const getAllPlants = (req, res) => {
-    const plants = Plant.find({})
+export const getAllPlants = async (req, res) => {
 
-    plants
-        .then((data) => {
-            if (data === null) {
-                res.status(200).send({
-                    message: 'No plants were found.',
-                })
-            }
-            res.send(data)
+    const { page = 1, limit = 9 } = req.query;
+
+    try {
+        const plants = await Plant.find({})
+        .limit(limit * 1)
+        .skip((page - 1) * limit)
+        .exec();
+        
+        const count = await Plant.countDocuments();
+    
+        res.json({
+            plants,
+            totalPages: Math.ceil(count / limit),
+            currentPage: page
+        });
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send({
+            message:
+                err.message ||
+                'Some error occurred while retrieving plants.',
         })
-        .catch((err) => {
-            console.log(err)
-            res.status(500).send({
-                message:
-                    err.message ||
-                    'Some error occurred while retrieving plants.',
-            })
-        })
+    }
 }
 
 export const getIndoorPlants = (req, res) => {

@@ -12,20 +12,20 @@ export async function getServerSideProps({ req, res }) {
     );
     // Fetch data from external API
     const data = await fetch(`http://localhost:3001/api/plants`)
-    const plants = await data.json()
+    const plantsJson = await data.json()
 
-    if (!plants) {
+    if (!plantsJson) {
         return {
             notFound: true,
         }
     }
 
-    console.log(plants)
+    console.log(plantsJson)
     // Pass data to the page via props
-    return { props: { plants } }
+    return { props: { plantsJson } }
 }
 
-export default function Plants({plants}) {
+export default function Plants({plantsJson}) {
     const { theme } = useTheme()
 
     return (
@@ -47,7 +47,7 @@ export default function Plants({plants}) {
                         sm={10}
                         css={{ w: "100%", h: "20em" }}
                     >
-                        {plants.map(plant => (
+                        {plantsJson.plants.map(plant => (
                             <PlantCard key={plant._id} plant={plant}/>
                         ))}
                     </Grid>
