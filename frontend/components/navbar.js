@@ -38,7 +38,6 @@ export default function Navbar() {
                             <Card 
                                 isHoverable 
                                 isPressable
-                                variant="bordered"
                                 css={{height: "5em"}}
                             >
                                 <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
@@ -62,7 +61,6 @@ export default function Navbar() {
                             <Card 
                                 isHoverable 
                                 isPressable
-                                variant="bordered"
                                 css={{height: "5em"}}
                             >
                                 <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
@@ -88,7 +86,6 @@ export default function Navbar() {
                         />
                     </Col>
                     <Col>
-                        The current theme is: {type}
                         <Switch
                             checked={isDark}
                             onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
