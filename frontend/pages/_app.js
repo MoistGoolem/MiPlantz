@@ -23,6 +23,7 @@ const lightTheme = createTheme({
             primarySolidHover: '$green700',
             primarySolidContrast: '$white',
             primaryShadow: '$green500',
+            backgroundContrast: '#f5f5f5',
 
             gradient: 'linear-gradient(112deg, $blue100 -25%, $pink500 -10%, $purple500 80%)',
             link: '#5E1DAD',

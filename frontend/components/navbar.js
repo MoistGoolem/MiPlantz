@@ -17,8 +17,8 @@ export default function Navbar() {
     const { isDark, type } = useTheme();
 
     return (
-        <nav style={{position: "sticky", top: 0}}>
-            <Grid.Container gap={1} justify="center" css={{position: "sticky"}}>
+        <nav style={{position: "sticky", top: 0, zIndex: 9999}}>
+            <Grid.Container gap={1} justify="center" css={{position: "sticky", background: "$backgroundContrast" }}>
                 <Grid xs>
                     <Spacer y={1} />
                     <Link href={"/"}>

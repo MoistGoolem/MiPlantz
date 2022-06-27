@@ -3,7 +3,7 @@ import { Card,Text, Row, Button, Col } from '@nextui-org/react'
 const PlantCard = ({plant}) => {
     return(
         <Card isHoverable isPressable css={{ w: "100%", h: "100%", margin: "$5" }}>
-            <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+            <Card.Header css={{ position: "absolute", top: 5 }}>
                 <Col>
                     <Text h3 color="white">
                         {plant.name.botanical.species}
@@ -26,7 +26,6 @@ const PlantCard = ({plant}) => {
                     bgBlur: "#ffffff66",
                     borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
                     bottom: 0,
-                    zIndex: 1,
                 }}
             >
                 <Row>
