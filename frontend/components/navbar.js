@@ -19,7 +19,7 @@ export default function Navbar() {
     return (
         <nav style={{position: "sticky", top: 0, zIndex: 9999}}>
             <Grid.Container gap={1} justify="center" css={{position: "sticky", background: "$backgroundContrast" }}>
-                <Grid xs>
+                <Grid xs css={{marginTop: "1em"}}>
                     <Spacer y={1} />
                     <Link href={"/"}>
                         <Button
@@ -28,7 +28,7 @@ export default function Navbar() {
                             rounded
                             ripple
                             animated
-                            icon={<HomeIcon filled />}
+                            icon={<HomeIcon filled size={undefined} height={undefined} width={undefined} label={undefined} />}
                         />
                     </Link>
                 </Grid>
@@ -79,7 +79,7 @@ export default function Navbar() {
                         </Link>
                     </Col>
                 </Grid>
-                <Grid xs>
+                <Grid xs css={{marginTop: "1em"}}>
                     <Col>
                         <User
                             name="Oliver"
