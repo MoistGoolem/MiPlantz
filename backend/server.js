@@ -6,9 +6,11 @@ dotenv.config()
 import { UserRouter } from './src/routers/UserRouter.js'
 import { PlantRouter } from './src/routers/PlantRouter.js'
 import { environment } from './src/environments/environment.js'
+import cors from 'cors'
 
 //****EXPRESS SETUP****/
 const app = express()
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

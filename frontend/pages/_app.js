@@ -4,6 +4,7 @@ import { NextUIProvider, createTheme } from '@nextui-org/react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import Head from 'next/head'
 import Layout from '../components/layout'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 // 2. Call `createTheme` and pass your custom values
 const lightTheme = createTheme({
@@ -70,22 +71,26 @@ const lightTheme = createTheme({
     }
 })
 
+const queryClient = new QueryClient()
+
 function MyApp({ Component, pageProps }) {
     return (
-        <NextThemesProvider
-            defaultTheme='system'
-            attribute='class'
-            value={{
-                light: lightTheme.className,
-                dark: darkTheme.className
-            }}
-        >
-            <NextUIProvider>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-            </NextUIProvider>
-        </NextThemesProvider>
+        <QueryClientProvider client={queryClient}>
+            <NextThemesProvider
+                defaultTheme='system'
+                attribute='class'
+                value={{
+                    light: lightTheme.className,
+                    dark: darkTheme.className
+                }}
+            >
+                <NextUIProvider>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </NextUIProvider>
+            </NextThemesProvider>
+        </QueryClientProvider>
     )
 }
 

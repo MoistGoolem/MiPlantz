@@ -33,14 +33,13 @@ export const createPlant = (req, res) => {
 }
 
 export const getAllPlants = async (req, res) => {
-
-    const { page = 1, limit = 9 } = req.query;
+    const { page = 1, limit = 3 } = req.query;
 
     try {
         const plants = await Plant.find({})
-        .limit(limit * 1)
-        .skip((page - 1) * limit)
-        .exec();
+            .limit(limit * 1)
+            .skip((page - 1) * limit)
+            .exec();
         
         const count = await Plant.countDocuments();
     
