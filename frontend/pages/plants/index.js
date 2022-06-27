@@ -73,7 +73,7 @@ export default function Plants() {
                                         <Grid
                                             xs={8} 
                                             sm={10}
-                                            css={{ w: "100%", h: "20em" }}
+                                            css={{ w: "100%", h: "20em", margin: "$5" }}
                                             key={i}
                                         >
                                             {page.plants.map((plant) => (
