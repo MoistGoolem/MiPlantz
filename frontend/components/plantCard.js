@@ -2,9 +2,12 @@ import { Card,Text, Row, Button, Col } from '@nextui-org/react'
 
 const PlantCard = ({plant}) => {
     return(
-        <Card isHoverable isPressable css={{ w: "100%", h: "100%", margin: "$5" }}>
+        <Card isHoverable isPressable css={{ w: "48.2%", h: "100%", margin: "$5" }}>
             <Card.Header css={{ position: "absolute", top: 5 }}>
                 <Col>
+                    <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
+                        {plant.name.common}
+                    </Text>
                     <Text h3 color="white">
                         {plant.name.botanical.species}
                     </Text>
@@ -31,10 +34,10 @@ const PlantCard = ({plant}) => {
                 <Row>
                     <Col>
                         <Text color="#000" size={12}>
-                            Available soon.
+                            Light: {plant.placement.light}
                         </Text>
                         <Text color="#000" size={12}>
-                            Get notified.
+                            Climate: {plant.climate}
                         </Text>
                     </Col>
                     <Col>
