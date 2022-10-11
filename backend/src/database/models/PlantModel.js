@@ -97,6 +97,9 @@ export const PlantSchema = new Schema(
                 type: String,
             },
         },
+        image: {
+            type: String
+        }
     },
     {
         timestamps: true,

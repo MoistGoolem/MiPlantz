@@ -14,9 +14,9 @@ export const createPlant = (req, res) => {
         feeding: data.feeding,
         feedingTime: data.feedingTime,
         additionalInfo: data.additionalInfo,
+        image: data.image
     })
 
-    //Save plant in db
     plant
         .save(plant)
         .then((data) => {
